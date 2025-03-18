@@ -51,7 +51,7 @@ footer {
 
     position: fixed;
     bottom: 10px;
-    left: 10px;
+    right: 10px;
     background-color: #b28fe3;
     padding: 2px 5px; 
     border-radius: 10px;
