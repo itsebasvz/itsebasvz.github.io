@@ -1,0 +1,90 @@
+body {
+    touch-action: manipulation;
+    font-family: "Afacad Flux", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin: 0; 
+    padding: 0;
+    background-color: #ebe0fa;
+}
+
+header {
+    background-color: #b28fe3;
+    padding: 20px;
+    color: black;
+}
+
+nav ul  {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #000000;
+    text-decoration:none;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a:active {
+    color: white;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+
+nav ul li a:active {
+    color: white;
+    font-weight: bold;
+    transform: scale(1.2); 
+}
+
+h1 {
+    color: #000000;
+}
+
+footer {
+
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #b28fe3;
+    padding: 2px 5px; 
+    border-radius: 10px;
+    display: inline-block; 
+}
+
+h2 a img {
+    width: 60%;
+    max-width: max-content;
+}
+
+p  {
+   margin: 20px;
+   text-align: justify;
+   text-align: left;
+   font-size: large;
+}
+
+main {
+    background-color: #ebe0fa;
+    padding: 20px;
+}
+
+p img {
+    display: inline-block; 
+    margin-left: 10px;
+    vertical-align: middle;
+    margin: 0 15px;
+}
+
+.iconos {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px; 
+}
