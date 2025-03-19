@@ -88,3 +88,7 @@ p img {
     align-items: center;
     gap: 30px; 
 }
+
+.inicio {
+    background-color: #b28fe3;
+}
