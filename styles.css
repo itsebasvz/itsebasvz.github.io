@@ -10,7 +10,7 @@ body {
 
 header {
     background-color: #b28fe3;
-    padding: 20px;
+    padding: 15px 20px;
     color: black;
 }
 
@@ -49,7 +49,7 @@ h1 {
 
 footer {
     position: fixed;
-    top: 10px;
+    bottom: 10px;
     right: 10px;
     background-color: #b28fe3;
     padding: 5px;
@@ -58,20 +58,22 @@ footer {
     align-items: center;
     flex-direction: column;
     gap: 2px;
+    animation: none !important;
+    transform: none !important;
 }
 
 footer a {
-    margin: 0 !important; 
-    padding: 0 !important;
+    margin: 0; 
+    padding: 0;
     display: flex; 
     justify-content: center;
 }
 
 footer a img {
-    margin: 3px !important; 
-    padding: 0 !important;
+    margin: 3px; 
+    padding: 0;
     display: block; 
-    max-width: 100%; 
+    max-width: 100%;
 }
 
 
@@ -90,6 +92,7 @@ p  {
 main {
     background-color: #ebe0fa;
     padding: 20px;
+    animation: pageLoad 0.8s ease-out;
 }
 
 p img {
@@ -108,4 +111,315 @@ p img {
 
 .inicio {
     background-color: #b28fe3;
+}
+
+/* Estilos para header profesional */
+.header-content {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000000;
+    letter-spacing: -0.02em;
+}
+
+/* Estilos para centrar contenido de sobre mi */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-content p {
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* 🌟 ANIMACIONES DE SCROLL - Creadas para Sebs */
+
+/* Estados iniciales de las animaciones */
+.fade-up, .scale-in, .slide-down, .bounce-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scale-in {
+    transform: scale(0.8) translateY(20px);
+}
+
+.slide-down {
+    transform: translateY(-30px);
+}
+
+.bounce-in {
+    transform: scale(0.3);
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Estados activos cuando aparecen */
+.fade-up.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scale-in.animate-in {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.slide-down.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bounce-in.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Keyframes para animaciones especiales */
+@keyframes pulse-subtle {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Efectos hover mejorados */
+.iconos img {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Animación de carga suave para toda la página */
+body {
+    animation: pageLoad 0.8s ease-out;
+}
+
+/* Estilo específico para la imagen de perfil */
+h3 img[alt="sebs"] {
+    transition: all 0.8s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Contenedor de la imagen de perfil - versión compatible */
+h3:has(img[alt="sebs"]),
+h3 img[alt="sebs"] {
+    opacity: 1 !important;
+}
+
+/* Animación específica para el contenedor de la imagen de perfil */
+h3.bounce-in:has(img[alt="sebs"]) {
+    opacity: 0;
+    transform: scale(0.3);
+}
+
+h3.bounce-in.animate-in:has(img[alt="sebs"]) {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Fallback para navegadores que no soportan :has() */
+.profile-image-container {
+    opacity: 1 !important;
+}
+
+.profile-image-container.bounce-in {
+    opacity: 0;
+    transform: scale(0.3);
+}
+
+.profile-image-container.bounce-in.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Responsive: reducir animaciones en móviles */
+@media (max-width: 768px) {
+    .fade-up, .scale-in, .slide-down, .bounce-in {
+        transition-duration: 0.4s;
+    }
+    
+    .bounce-in {
+        transition: all 0.6s ease;
+    }
+}
+
+/* 🎭 EFECTO TYPING - Cursor parpadeante */
+.typing-cursor {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.2em;
+    animation: blink-cursor 1s infinite;
+}
+
+@keyframes blink-cursor {
+    0%, 50% { 
+        opacity: 1; 
+    }
+    51%, 100% { 
+        opacity: 0; 
+    }
+}
+
+/* Estilos para h1 con efecto typing */
+h1.typing {
+    display: inline-block;
+}
+
+/* Responsive: Ajustar cursor en móviles */
+@media (max-width: 768px) {
+    .typing-cursor {
+        font-size: 1em;
+    }
+}
+
+/* 🌙 THEME SWITCHER - Botón y estilos */
+
+/* Botón del theme switcher */
+.theme-switcher {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+#theme-toggle {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #f0f0f0, #d0d0d0);
+    box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 7px 7px 14px #bebebe, -7px -7px 14px #ffffff;
+}
+
+#theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Iconos del sol y luna */
+.sun-icon, .moon-icon {
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.sun-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.moon-icon {
+    opacity: 0;
+    transform: rotate(180deg);
+}
+
+/* Estado oscuro del botón */
+[data-theme="dark"] #theme-toggle {
+    background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+    box-shadow: 5px 5px 10px #0f0f0f, -5px -5px 10px #4b4b4b;
+}
+
+[data-theme="dark"] #theme-toggle:hover {
+    box-shadow: 7px 7px 14px #0f0f0f, -7px -7px 14px #4b4b4b;
+}
+
+[data-theme="dark"] .sun-icon {
+    opacity: 0;
+    transform: rotate(-180deg);
+}
+
+[data-theme="dark"] .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/* 🌙 TEMA OSCURO - Variables y estilos */
+
+/* Variables CSS para temas */
+:root {
+    --bg-primary: #ebe0fa;
+    --bg-secondary: #b28fe3;
+    --text-primary: #000000;
+    --text-secondary: #2d2d2d;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+}
+
+/* Aplicar variables a elementos */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+header {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+footer {
+    background-color: var(--bg-secondary);
+}
+
+h1, h2, h3 {
+    color: var(--text-primary);
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+/* Navegación en modo oscuro */
+nav ul li a {
+    color: var(--text-primary);
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a:active {
+    color: var(--text-primary);
+}
+
+/* Responsive del theme switcher */
+@media (max-width: 768px) {
+    .theme-switcher {
+        bottom: 15px;
+        left: 15px;
+    }
+    
+    #theme-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
 }
